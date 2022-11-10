@@ -62,7 +62,7 @@ loadAppConfig()
         const newName = argName || currentAppName;
         const nS_NewName = newName.replace(/\s/g, '');
         const pattern = /^([\p{Letter}\p{Number}])+([\p{Letter}\p{Number}\s]+)$/u;
-        const bundleID = program.bundleID ? program.bundleID.toLowerCase() : null;
+        const bundleID = program.bundleID ? program.bundleID : null;
         let newBundlePath;
         const listOfFoldersAndFiles = foldersAndFiles(currentAppName, newName);
         const listOfFilesToModifyContent = filesToModifyContent(currentAppName, newName, projectName);
@@ -197,7 +197,7 @@ loadAppConfig()
                   if (bundleID) {
                     newBundlePath = newJavaPath;
                   } else {
-                    newBundlePath = newBundleID.replace(/\./g, '/').toLowerCase();
+                    newBundlePath = newBundleID.replace(/\./g, '/');
                     newBundlePath = `${javaFileBase}/${newBundlePath}`;
                   }
 
