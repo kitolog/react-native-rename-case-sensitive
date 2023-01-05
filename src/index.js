@@ -61,7 +61,7 @@ loadAppConfig()
       .action(argName => {
         const newName = argName || currentAppName;
         const nS_NewName = newName.replace(/\s/g, '');
-        const pattern = /^([\p{Letter}\p{Number}])+([\p{Letter}\p{Number}\s]+)$/u;
+        const pattern = /^([\p{Letter}\p{Number}\[\]])+([\p{Letter}\p{Number}\[\]\s]+)$/u;
         const bundleID = program.bundleID ? program.bundleID : null;
         let newBundlePath;
         const listOfFoldersAndFiles = foldersAndFiles(currentAppName, newName);
